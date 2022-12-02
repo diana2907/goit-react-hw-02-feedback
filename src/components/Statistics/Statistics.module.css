@@ -1,0 +1,23 @@
+.stats {
+}
+
+.stat__item {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(51, 18, 12);;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.stat__item:not(:last-child) {
+    margin-bottom: 15px;
+   }
+
+.quantity{
+    font-size: 18px;
+    font-weight: 500;
+   }
+
+   
+
+ 
