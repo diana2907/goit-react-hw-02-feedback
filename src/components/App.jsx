@@ -18,10 +18,25 @@ export class App extends Component {
     }));
   };
 
-  render() {
+  countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;
     const total = good + neutral + bad;
-    const positivePercentage = Math.round((good / total) * 100) || 0;
+    return total;
+  };
+
+  countPositiveFeedbackPercentage = () => {
+    const { good } = this.state;
+    const total = this.countTotalFeedback();
+    const percents = (good / total) * 100 || 0;
+    return percents;
+  };
+
+  render() {
+    const { good, neutral, bad } = this.state;
+    const total = this.countTotalFeedback();
+    const positivePercentage = Math.round(
+      this.countPositiveFeedbackPercentage()
+    );
     const options = Object.keys(this.state);
 
     return (
